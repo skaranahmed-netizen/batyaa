@@ -1,0 +1,211 @@
+﻿
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>كل سنة وأنتِ طيبة يا بطايا ❤️</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- BG -->
+<div class="bg-grad"></div>
+<canvas id="canvas"></canvas>
+<div id="petals"></div>
+
+<!-- ══ MAIN ══ -->
+<div id="main" class="show">
+
+  <!-- MUSIC -->
+  <div id="mp">
+    <button class="mb" id="mb" title="موسيقى" onclick="toggleM()">
+      <i class="fas fa-music"></i>
+      <div class="meq"><span></span><span></span><span></span><span></span></div>
+    </button>
+    <audio id="audio" loop><source src="YOUR_MUSIC_FILE.mp3" type="audio/mpeg"></audio>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="av-wrap">
+      <div class="av-ring">
+        <div class="av-in">
+          <img src="profile.jpg" alt="بطايا" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=font-size:72px>💖</span>';">
+        </div>
+      </div>
+    </div>
+    <div class="nbadge">
+      <span class="bh">❤️</span>
+      <span>بطايا</span>
+      <span class="bh">❤️</span>
+    </div>
+    <h1 class="hero-h">
+      كل سنة وأنتِ طيبة يا بطايا<br>
+      يا روح قلبي وأجمل هدية في حياتي ❤️
+    </h1>
+    <p class="hero-sub">النهارده مش بس عيد ميلادك... ده احتفال بأجمل إنسانة ربنا خلقها وأكرمني بيها.</p>
+    <div class="si"><span>scroll</span><i class="fas fa-chevron-down"></i></div>
+  </section>
+
+  <!-- ANNIVERSARY -->
+  <section id="anniv" style="padding:0 20px 60px">
+    <div class="inner">
+      <div class="gc an-card reveal">
+        <span class="an-ic">🥂</span>
+        <p class="an-txt">
+          بقالنا مع بعض سنة يا بطايا...<br>
+          سنة من أجمل اللحظات والذكريات الحلوة.<br>
+          سنة وأنا كل يوم بحمد ربنا إنك في حياتي.<br>
+          ربنا يخليكِ ليا دايماً يا روح قلبي. ❤️🌹
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MESSAGE -->
+  <section id="msg">
+    <div class="inner">
+      <h2 class="stitle reveal">رسالة من أعماق قلبي</h2>
+      <div class="sdiv reveal d1"><span style="color:#c9906a">❤️</span></div>
+      <div class="gc msg-card reveal d2">
+        <p class="msg-txt">
+          <span class="hi">يا بطايا... يا أغلى حاجة عندي 🌹</span>
+          مش عارف أوصف قد إيه أنا محظوظ إنك دخلتِ حياتي
+          وخليتيها أحلى وأجمل من أي وقت تاني.<br><br>
+          ابتسامتك دي بتعمل في قلبي حاجة مش قادر أوصفها،
+          وعيونك دول بيشوفوا الدنيا بطريقة بتخليني أحب كل حاجة فيها.<br><br>
+          بقالنا سنة يا <span class="hl">روح قلبي</span>... وكل يوم بيعدي بيثبتلي
+          إن ربنا اختارك ليا بالظبط وإني أسعد واحد في الدنيا.<br><br>
+          بتمنالك في عيد ميلادك كل سعادة الدنيا،
+          وبتمنى أكون دايماً سبب ابتسامتك وفرحتك.<br><br>
+          انتِ مش بس حد بحبه... انتِ إنسانتي المفضلة،
+          وأجمل قدر في حياتي، وسر سعادتي كلها.
+        </p>
+        <div class="msg-sign">كل سنة وأنتِ طيبة يا بطايا يا روح قلبي. <span class="hs">❤️</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOVE BUTTON -->
+  <section id="lovebtn">
+    <div class="reveal">
+      <button class="lcta" onclick="openModal()">
+        <i class="fas fa-heart"></i>
+        اضغطي هنا يا بطايا ❤️
+      </button>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section id="cd">
+    <div class="inner">
+      <h2 class="stitle reveal">عيد ميلاد بطايا</h2>
+      <div class="sdiv reveal d1"><span style="color:#c9906a">🎂</span></div>
+      <p class="bday-msg" id="bday-msg">🎉🎂 النهارده يومك يا بطايا! كل سنة وأنتِ طيبة يا روح قلبي! ❤️🎉</p>
+      <div class="cd-grid" id="cd-grid">
+        <div class="gc cd-item reveal d1"><span class="cd-num" id="cd-d">00</span><span class="cd-lbl">يوم</span></div>
+        <div class="gc cd-item reveal d2"><span class="cd-num" id="cd-h">00</span><span class="cd-lbl">ساعة</span></div>
+        <div class="gc cd-item reveal d3"><span class="cd-num" id="cd-m">00</span><span class="cd-lbl">دقيقة</span></div>
+        <div class="gc cd-item reveal d4"><span class="cd-num" id="cd-s">00</span><span class="cd-lbl">ثانية</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="inner">
+      <h2 class="stitle reveal">ذكرياتنا الجميلة 📸</h2>
+      <div class="sdiv reveal d1"><span style="color:#c9906a">🌹</span></div>
+      <div class="g-grid">
+
+        <div class="g-card reveal d1" onclick="openLB('photo1.jpg')">
+          <div class="g-img">
+            <img src="photo1.jpg" alt="ذكرى ١" onerror="this.style.display='none';">
+            <div class="g-ov"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="g-cap">
+            <p>كل سنة وأنتِ طيبة يا روح قلبي...<br>ربنا يخليكِ ليا دايماً يا بطايا ❤️</p>
+            <span class="gh">❤️</span>
+          </div>
+        </div>
+
+        <div class="g-card reveal d2" onclick="openLB('photo2.jpg')">
+          <div class="g-img">
+            <img src="photo2.jpg" alt="ذكرى ٢" onerror="this.style.display='none';">
+            <div class="g-ov"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="g-cap">
+            <p>كل سنة وأنتِ طيبة يا بطايا...<br>يا حبيبة قلبي وأجمل حاجة في حياتي 🌹</p>
+            <span class="gh">🌹</span>
+          </div>
+        </div>
+
+        <div class="g-card reveal d3" onclick="openLB('photo3.jpg')">
+          <div class="g-img">
+            <img src="photo3.jpg" alt="ذكرى ٣" onerror="this.style.display='none';">
+            <div class="g-ov"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="g-cap">
+            <p>أنتِ نور عيني يا بطايا...<br>والأبد مش كافي معاكِ يا قمر 🌸</p>
+            <span class="gh">💖</span>
+          </div>
+        </div>
+
+        <div class="g-card reveal d4" onclick="openLB('photo4.jpg')">
+          <div class="g-img">
+            <img src="photo4.jpg" alt="ذكرى ٤" onerror="this.style.display='none';">
+            <div class="g-ov"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="g-cap">
+            <p>في كل لحظة وأنا بشوفك...<br>بحمد ربنا على أجمل نعمة في حياتي ✨</p>
+            <span class="gh">💝</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINALE -->
+  <section id="finale">
+    <div class="inner" style="text-align:center">
+      <span class="fh reveal">❤️</span>
+      <h2 class="ft reveal d1">الأبد مش كافي معاكِ يا بطايا.</h2>
+      <p class="fs reveal d2"><i class="fas fa-heart"></i> عملتلك ده بكل حبي وروحي، لأجلك انتِ بس. <i class="fas fa-heart"></i></p>
+      <div class="reveal d3"><div class="sl"></div><p class="st">إنسانك للأبد. ❤️</p></div>
+    </div>
+  </section>
+
+</div><!-- /#main -->
+
+<!-- ══ MODAL ══ -->
+<div id="modal">
+  <div class="m-bg" onclick="closeModal()"></div>
+  <div class="m-box">
+    <span class="mh">💖</span>
+    <h3 class="mt">سر بيني وبينك يا بطايا...</h3>
+    <p class="mm">
+      "لو اتوأمر تاني في أي حياة تانية،<br>
+      هاختارك في كل مرة من غير تفكير...<br>
+      في كل كون، وفي كل قصة، وفي كل لحظة.<br><br>
+      هتفضلي دايماً إنسانتي المفضلة<br>
+      وروح قلبي يا بطايا. ❤️"
+    </p>
+    <button class="mc" onclick="closeModal()">ربنا يخليكِ ليا دايماً ❤️</button>
+  </div>
+</div>
+
+<!-- ══ LIGHTBOX ══ -->
+<div id="lightbox">
+  <div class="lb-bg" onclick="closeLB()"></div>
+  <div class="lb-box">
+    <button class="lb-cls" onclick="closeLB()"><i class="fas fa-times"></i></button>
+    <img id="lb-img" src="" alt="ذكرى">
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
